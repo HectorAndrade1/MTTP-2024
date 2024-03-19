@@ -64,7 +64,7 @@ public class EventoController {
         String target=mt.nextLine();
         for(Evento j:listaeventos){
             if(target.trim().equalsIgnoreCase(j.getNombreEvento())){
-                System.out.println("Indique parametro a modificar:\n1.Nombre\n2.Descripción\n3.Ubicacion\n4.Fecha de Entrega\n5.Hora de inicio\n6.Hora final");
+                System.out.println("Indique parametro a modificar:\n1.Nombre\n2.Descripción\n3.Ubicacion\n4.Fecha del evento\n5.Hora de inicio\n6.Hora final");
                 Scanner sw=new Scanner(System.in);
                 int val=sw.nextInt();
                 switch (val){
@@ -111,7 +111,7 @@ public class EventoController {
                     default:System.out.println("La opncion ingresada no es valida");
                 }
             }else{
-                System.out.println("La Evento especificado no existe");
+                System.out.println("El Evento especificado no existe");
             }
         }
     }
@@ -125,11 +125,11 @@ public class EventoController {
                 String pregunta=el.nextLine();
                 if(pregunta.equalsIgnoreCase("si")){
                     listaeventos.remove(k);
-                    System.out.println("Evento eliminada");
+                    System.out.println("Evento eliminado");
                     return;
                 }
             }else{
-                System.out.println("La Evento especificada no existe");
+                System.out.println("El Evento especificado no existe");
             }
         }
     }
