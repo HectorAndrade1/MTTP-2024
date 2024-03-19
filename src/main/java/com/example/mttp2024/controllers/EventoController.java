@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class EventoController {
     public List<Evento> listaeventos=new ArrayList<>();
 
-    public void CrearEvento(){
+    public void crearEvento(){
         System.out.println("Ingrese nombre de Evento");
         Scanner scan=new Scanner(System.in);
         String evename=scan.nextLine();
@@ -58,7 +58,7 @@ public class EventoController {
         }
         return r;
     }
-    public void ModificarEvento(){
+    public void modificarEvento(){
         System.out.println("Ingrese Evento a modificar");
         Scanner mt=new Scanner(System.in);
         String target=mt.nextLine();
@@ -78,17 +78,18 @@ public class EventoController {
                         break;
                     case 3: System.out.println("Ingrese nueva Ubicacion de la Evento");
                             String nuevaubi=mt.nextLine();
-                            /*if(j.getUbicacion()==null){
+                            if(j.getUbicacion()==null){
                                 String name=j.getNombreEvento();
                                 String decrip=j.getDescripcionEvento();
                                 LocalDate fechaEvento=j.getFechaEvento();
                                 LocalTime horaInicioEvento=j.getHoraInicioEvento();
                                 LocalTime horaFinEvento=j.getHoraFinEvento();
                                 listaeventos.remove(j);
-                                listaeventos.add(j,new Evento(name, decrip,nuevaubi, fechaEvento, horaInicioEvento, horaFinEvento));
+                                int k=listaeventos.indexOf(j);
+                                listaeventos.add(k,new Evento(name, decrip,nuevaubi, fechaEvento, horaInicioEvento, horaFinEvento));
                             }else {
                                 j.setUbicacion(nuevaubi);
-                            }*/
+                            }
                         break;
                     case 4: System.out.println("Ingrese nueva fecha de evento");
                             String ntxtdate=mt.nextLine();
@@ -115,7 +116,7 @@ public class EventoController {
             }
         }
     }
-    public void EliminarEvento(){
+    public void eliminarEvento(){
         System.out.println("Ingrese Evento a eliminar");
         Scanner el=new Scanner(System.in);
         String elim=el.nextLine();
@@ -133,7 +134,7 @@ public class EventoController {
             }
         }
     }
-    public void ListarEventos(){
+    public void listarEventos(){
         for(Evento l:listaeventos){
             System.out.println("Nombre:"+l.getNombreEvento()+"\nDescripción:"+l.getDescripcionEvento()/*+"\nUbicación:"+l.getUbicacion()*/+"\nFecha del evento:"+l.getFechaEvento()+"\nHora de inicio:"+l.getHoraFinEvento()+"\nHora fin de evento"+l.getHoraFinEvento());
             System.out.println("___________________________________");
