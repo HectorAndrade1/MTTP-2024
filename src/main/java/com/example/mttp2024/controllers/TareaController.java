@@ -37,7 +37,7 @@ public class TareaController {
         }
         return r;
     }
-    public void ModificarTarea(){
+    public void modificarTarea(){
         System.out.println("Ingrese tarea a modificar");
         Scanner mt=new Scanner(System.in);
         String target=mt.nextLine();
@@ -72,7 +72,7 @@ public class TareaController {
             }
         }
     }
-    public void EliminarTarea(){
+    public void eliminarTarea(){
         System.out.println("Ingrese tarea a eliminar");
         Scanner el=new Scanner(System.in);
         String elim=el.nextLine();
@@ -90,7 +90,7 @@ public class TareaController {
             }
         }
     }
-    public void MostraCreacion(){
+    public void mostraCreacion(){
         for(Tarea l:listatareas){
             System.out.println("Nombre:"+l.getNombreTarea()+"\nDescripcion:"+l.getDescripcionTarea()+"\nPrioridad:"+l.getPrioridad()+"\nFecha de Entrega:"+l.getFechaEntrega());
             System.out.println("____________________________________________");
