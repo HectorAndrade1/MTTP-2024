@@ -23,7 +23,7 @@ public class HelloApplication extends Application {
         prueba.crearTarea();
         prueba.ModificarTarea();
         prueba.MostraCreacion();
-        prueba.MostrarPrioridad();
+        prueba.mostrarPrioridad();
         prueba.EliminarTarea();
 
         launch();

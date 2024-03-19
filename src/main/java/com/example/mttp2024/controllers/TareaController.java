@@ -96,7 +96,7 @@ public class TareaController {
             System.out.println("____________________________________________");
         }
     }
-    public void MostrarPrioridad(){
+    public void mostrarPrioridad(){
         List<Tarea> listaprior = new ArrayList<>(listatareas);
         Tarea aux;
         for(int j=0;j<listaprior.size();j++){
