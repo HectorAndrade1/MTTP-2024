@@ -32,7 +32,7 @@ public class EventoController {
         String horafin=scan.nextLine();
         LocalTime evehorafin=LocalTime.parse(horafin,horaformat);
         if(existe(evename)){
-            System.out.println("El evento ya existe; Evento no agreagado");
+            System.out.println("El evento ya existe; Evento no agregado");
         }else{
             System.out.println("¿El evento tiene Ubicacion?:\n1.Si\n2.no");
             Scanner num=new Scanner(System.in);
@@ -78,17 +78,17 @@ public class EventoController {
                         break;
                     case 3: System.out.println("Ingrese nueva Ubicacion de la Evento");
                             String nuevaubi=mt.nextLine();
-                            /*if(j.getUbicacion()==null){
+                            if(j.getUbicacion()==null){
                                 String name=j.getNombreEvento();
                                 String decrip=j.getDescripcionEvento();
                                 LocalDate fechaEvento=j.getFechaEvento();
                                 LocalTime horaInicioEvento=j.getHoraInicioEvento();
                                 LocalTime horaFinEvento=j.getHoraFinEvento();
                                 listaeventos.remove(j);
-                                listaeventos.add(j,new Evento(name, decrip,nuevaubi, fechaEvento, horaInicioEvento, horaFinEvento));
+                                listaeventos.add(new Evento(name, decrip,nuevaubi, fechaEvento, horaInicioEvento, horaFinEvento));
                             }else {
                                 j.setUbicacion(nuevaubi);
-                            }*/
+                            }
                         break;
                     case 4: System.out.println("Ingrese nueva fecha de evento");
                             String ntxtdate=mt.nextLine();
@@ -135,7 +135,7 @@ public class EventoController {
     }
     public void ListarEventos(){
         for(Evento l:listaeventos){
-            System.out.println("Nombre:"+l.getNombreEvento()+"\nDescripción:"+l.getDescripcionEvento()/*+"\nUbicación:"+l.getUbicacion()*/+"\nFecha del evento:"+l.getFechaEvento()+"\nHora de inicio:"+l.getHoraFinEvento()+"\nHora fin de evento"+l.getHoraFinEvento());
+            System.out.println("Nombre:"+l.getNombreEvento()+"\nDescripción:"+l.getDescripcionEvento()+"\nUbicación:"+l.getUbicacion()+"\nFecha del evento:"+l.getFechaEvento()+"\nHora de inicio:"+l.getHoraFinEvento()+"\nHora fin de evento"+l.getHoraFinEvento());
             System.out.println("___________________________________");
         }
     }

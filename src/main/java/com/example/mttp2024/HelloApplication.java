@@ -1,5 +1,6 @@
 package com.example.mttp2024;
 
+import com.example.mttp2024.controllers.TareaController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,6 +19,13 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        TareaController prueba= new TareaController();
+        prueba.crearTarea();
+        prueba.ModificarTarea();
+        prueba.MostraCreacion();
+        prueba.MostrarPrioridad();
+        prueba.EliminarTarea();
+
         launch();
     }
 }

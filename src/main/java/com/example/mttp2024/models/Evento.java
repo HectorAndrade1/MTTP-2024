@@ -77,4 +77,12 @@ public class Evento {
     public void setHoraFinEvento(LocalTime horaFinEvento) {
         this.horaFinEvento = horaFinEvento;
     }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
 }

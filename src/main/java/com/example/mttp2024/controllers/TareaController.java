@@ -10,7 +10,7 @@ import java.util.*;
 public class TareaController {
 
     public List<Tarea> listatareas= new ArrayList<>();
-    public void CrearTarea(){
+    public void crearTarea(){
         System.out.println("Ingrese nombre de tarea");
         Scanner scan=new Scanner(System.in);
         String taskname=scan.nextLine();
