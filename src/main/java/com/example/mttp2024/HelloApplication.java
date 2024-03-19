@@ -21,10 +21,10 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
         TareaController prueba= new TareaController();
         prueba.crearTarea();
-        prueba.ModificarTarea();
-        prueba.MostraCreacion();
-        prueba.mostrarPrioridad();
-        prueba.EliminarTarea();
+       prueba.modificarTarea();
+       prueba.mostraCreacion();
+       prueba.mostrarPrioridad();
+       prueba.eliminarTarea();
 
         launch();
     }
