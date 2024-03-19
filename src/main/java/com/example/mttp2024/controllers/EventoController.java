@@ -108,7 +108,7 @@ public class EventoController {
                             LocalTime newhorafin=LocalTime.parse(newfin,finhora);
                             j.setHoraFinEvento(newhorafin);
                         break;
-                    default:System.out.println("La opncion ingresada no es valida");
+                    default:System.out.println("La opción ingresada no es valida");
                 }
             }else{
                 System.out.println("El Evento especificado no existe");
