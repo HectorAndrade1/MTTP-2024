@@ -16,7 +16,7 @@ public class TareaController {
         String taskname=scan.nextLine();
         System.out.println("Ingrese descripcion");
         String taskdescription=scan.nextLine();
-        System.out.println("Ingrese prioridada");
+        System.out.println("Ingrese prioridad");
         Scanner scp=new Scanner(System.in);
         int prior= scp.nextInt();
         System.out.println("Ingrese fecha de entrega: dd-mm-yyyy");
