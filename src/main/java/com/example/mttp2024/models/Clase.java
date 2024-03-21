@@ -7,6 +7,9 @@ public class Clase {
     private LocalTime horaInicio;
     private  LocalTime horaFin;
 
+    public Clase() {
+        diaSemana = "Ninguno";
+    }
     public Clase(String diaSemana, LocalTime horaInicio, LocalTime horaFin) {
         this.diaSemana=diaSemana;
         this.horaInicio=horaInicio;

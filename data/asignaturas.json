@@ -1,0 +1,27 @@
+[ {
+  "nombreAsigatura" : "Liturgia II",
+  "listaTareas" : [ {
+    "nombreTarea" : "Resumen Tema 1",
+    "descripcionTarea" : "",
+    "prioridad" : 1,
+    "fechaEntrega" : [ 2024, 4, 2 ]
+  }, {
+    "nombreTarea" : "Resumen Tema 2",
+    "descripcionTarea" : "",
+    "prioridad" : 1,
+    "fechaEntrega" : [ 2024, 4, 11 ]
+  } ],
+  "listaClases" : [ {
+    "diaSemana" : "Lunes",
+    "horaInicio" : [ 8, 0 ],
+    "horaFin" : [ 9, 0 ]
+  }, {
+    "diaSemana" : "Martes",
+    "horaInicio" : [ 8, 0 ],
+    "horaFin" : [ 9, 0 ]
+  }, {
+    "diaSemana" : "Jueves",
+    "horaInicio" : [ 8, 0 ],
+    "horaFin" : [ 9, 0 ]
+  } ]
+} ]

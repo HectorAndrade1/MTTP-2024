@@ -12,6 +12,11 @@ public class Evento {
     private LocalTime horaInicioEvento;
     private LocalTime horaFinEvento;
 
+    public Evento() {
+        nombreEvento = "";
+        descripcionEvento = "";
+        ubicacion = "";
+    }
     //contructor con todos los atributos
     public Evento(String nombreEvento,String descripcionEvento,String ubicacion,LocalDate fechaEvento,
                   LocalTime horaInicioEvento,LocalTime horaFinEvento){

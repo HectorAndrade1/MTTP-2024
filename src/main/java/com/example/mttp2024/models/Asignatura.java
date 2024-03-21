@@ -7,6 +7,11 @@ public class Asignatura {
     private ArrayList<Tarea> listaTareas;
     private ArrayList<Clase> listaClases;
 
+    public Asignatura() {
+        nombreAsigatura = "";
+        listaTareas = new ArrayList<Tarea>();
+        listaClases = new ArrayList<Clase>();
+    }
     public Asignatura(String nombreAsigatura, ArrayList<Tarea> listaTareas, ArrayList<Clase> listaClases){
 
         this.nombreAsigatura=nombreAsigatura;

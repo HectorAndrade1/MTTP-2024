@@ -1,0 +1,15 @@
+[ {
+  "nombreEvento" : "Bautismo",
+  "descripcionEvento" : "Alfonso me solicito uno",
+  "ubicacion" : "Calle Aguayo #121",
+  "fechaEvento" : [ 2024, 4, 1 ],
+  "horaInicioEvento" : [ 14, 0 ],
+  "horaFinEvento" : [ 15, 0 ]
+}, {
+  "nombreEvento" : "Exorcismo",
+  "descripcionEvento" : "Alondra me solicito uno",
+  "ubicacion" : "Av. Charco #666",
+  "fechaEvento" : [ 2024, 4, 2 ],
+  "horaInicioEvento" : [ 23, 0 ],
+  "horaFinEvento" : [ 23, 59 ]
+} ]

@@ -8,6 +8,11 @@ public class Tarea {
     private int prioridad;
     private LocalDate fechaEntrega;
 
+    public Tarea() {
+        nombreTarea = "";
+        descripcionTarea = "";
+        prioridad = 50;
+    }
     public Tarea( String nombreTarea,String descripcionTarea, int prioridad,LocalDate fechaEntrega){
         this.nombreTarea=nombreTarea;
         this.descripcionTarea=descripcionTarea;
