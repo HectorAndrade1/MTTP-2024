@@ -1,6 +1,7 @@
 package com.example.mttp2024.controllers;
 
 import com.example.mttp2024.models.Evento;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -83,17 +84,17 @@ public class EventoController {
                 listaeventos.get(indice).setDescripcionEvento(nuevovalor);
                 break;
             case "ubicacion":
-                if(listaeventos.get(indice).getUbicacion()==null){
-                                String name=listaeventos.get(indice).getNombreEvento();
-                                String decrip=listaeventos.get(indice).getDescripcionEvento();
-                                LocalDate fechaEvento=listaeventos.get(indice).getFechaEvento();
-                                LocalTime horaInicioEvento=listaeventos.get(indice).getHoraInicioEvento();
-                                LocalTime horaFinEvento=listaeventos.get(indice).getHoraFinEvento();
-                                listaeventos.remove(listaeventos.get(indice));
-                                listaeventos.add(indice,new Evento(name, decrip,nuevovalor, fechaEvento, horaInicioEvento, horaFinEvento));
-                            }else {
-                            listaeventos.get(indice).setUbicacion(nuevovalor);
-                            }
+                if (listaeventos.get(indice).getUbicacion() == null) {
+                    String name = listaeventos.get(indice).getNombreEvento();
+                    String decrip = listaeventos.get(indice).getDescripcionEvento();
+                    LocalDate fechaEvento = listaeventos.get(indice).getFechaEvento();
+                    LocalTime horaInicioEvento = listaeventos.get(indice).getHoraInicioEvento();
+                    LocalTime horaFinEvento = listaeventos.get(indice).getHoraFinEvento();
+                    listaeventos.remove(listaeventos.get(indice));
+                    listaeventos.add(indice, new Evento(name, decrip, nuevovalor, fechaEvento, horaInicioEvento, horaFinEvento));
+                } else {
+                    listaeventos.get(indice).setUbicacion(nuevovalor);
+                }
                 break;
             case "fechaEvento":
                 DateTimeFormatter formato = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("dd-MM-yyyy")).toFormatter();
@@ -115,27 +116,23 @@ public class EventoController {
         }
     }
 
-    public void EliminarEvento(String nombre) {
-    for (Evento k : listaeventos) {
-        if (nombre.trim().equalsIgnoreCase(k.getNombreEvento())) {
-            listaeventos.remove(k);
-            System.out.println("Evento Eliminado");
-        } else {
-            System.out.println("El Evento especificado no existe");
+    public void eliminarEvento(String nombre) {
+        for (Evento k : listaeventos) {
+            if (nombre.trim().equalsIgnoreCase(k.getNombreEvento())) {
+                listaeventos.remove(k);
+                System.out.println("Evento Eliminado");
+                return;
+            } else {
+                System.out.println("El Evento especificado no existe");
+            }
         }
     }
-}
 
-public void ListarEventos() {
-    for (Evento l : listaeventos) {
-        System.out.println("Nombre:" + l.getNombreEvento() + "\nDescripción:" + l.getDescripcionEvento()/*+"\nUbicación:"+l.getUbicacion()*/ + "\nFecha del evento:" + l.getFechaEvento() + "\nHora de inicio:" + l.getHoraFinEvento() + "\nHora fin de evento" + l.getHoraFinEvento());
-        System.out.println("___________________________________");
+    public void listarEventos() {
+        for (Evento l : listaeventos) {
+            System.out.println("Nombre:" + l.getNombreEvento() + "\nDescripción:" + l.getDescripcionEvento()/*+"\nUbicación:"+l.getUbicacion()*/ + "\nFecha del evento:" + l.getFechaEvento() + "\nHora de inicio:" + l.getHoraFinEvento() + "\nHora fin de evento" + l.getHoraFinEvento());
+            System.out.println("___________________________________");
+        }
     }
-}
 
-public static void main(String[] args) {
-    EventoController ev = new EventoController();
-    ev.crearEvento("nombre", "defeffef", "2020-10-12", "12:20", "12:20");
-    ev.crearEvento("nombre", "defeffef", "2020-10-12", "12:20", "12:20");
-}
 }

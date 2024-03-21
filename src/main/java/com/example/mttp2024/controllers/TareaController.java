@@ -72,19 +72,12 @@ public class TareaController {
             }
         }
     }
-    public void eliminarTarea(){
-        System.out.println("Ingrese tarea a eliminar");
-        Scanner el=new Scanner(System.in);
-        String elim=el.nextLine();
+    public void eliminarTarea(String nombre){
         for(Tarea k:listatareas){
-            if(elim.trim().equalsIgnoreCase(k.getNombreTarea())){
-                System.out.println("Esta seguro que desea eliminar la tarea:\nsi\nno");
-                String pregunta=el.nextLine();
-                if(pregunta.equalsIgnoreCase("si")){
-                    listatareas.remove(k);
-                    System.out.println("Tarea eliminada");
-                    return;
-                }
+            if(nombre.trim().equalsIgnoreCase(k.getNombreTarea())){
+                listatareas.remove(k);
+                System.out.println("Tarea eliminada");
+                return;
             }else{
                 System.out.println("La tarea especificada no existe");
             }
