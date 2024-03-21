@@ -71,7 +71,7 @@ public class TareaController {
 
     public void eliminarTarea(String nombre) {
         for (Tarea k : listatareas) {
-            if (nombre.trim().equalsIgnoreCase(k.getNombreTarea())) {
+            if (existe(nombre)) {
                 listatareas.remove(k);
                 System.out.println("Tarea eliminada");
                 return;
