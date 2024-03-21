@@ -46,18 +46,22 @@ public class TareaController {
         switch (atributo) {
             case "nombreTarea":
                 listatareas.get(indice).setNombreTarea(nuevovalor);
+                System.out.println("Nombre cambiado");
                 break;
             case "descripcionTarea":
                 listatareas.get(indice).setDescripcionTarea(nuevovalor);
+                System.out.println("Descripcion cambiada");
                 break;
             case "prioridad":
                 int numero = Integer.parseInt(nuevovalor);
                 listatareas.get(indice).setPrioridad(numero);
+                System.out.println("Prioridad cambiada");
                 break;
             case "fechaEntrega":
-                DateTimeFormatter formato = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("dd-MM-yyyy")).toFormatter();
+                DateTimeFormatter formato = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toFormatter();
                 LocalDate newdate = LocalDate.parse(nuevovalor, formato);
                 listatareas.get(indice).setFechaEntrega(newdate);
+                System.out.println("Fecha cambiada");
                 break;
             default:
                 System.out.println("La opncion ingresada no es valida");

@@ -9,6 +9,8 @@ import com.example.mttp2024.models.Tarea;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,5 +40,39 @@ public class TareaControllerTest {
         assertEquals(descripcion, tarea.getDescripcionTarea());
         assertEquals(prioridad, tarea.getPrioridad());
         assertEquals(fechaEntrega, tarea.getFechaEntrega());
+    }
+    @Test
+    void modificarTarea_DeberiaModificarTarea(){
+        //Arrange
+        TareaController tareaController=new TareaController();
+
+        String nombre="nombre";
+        String descripcion="descripcion";
+        int prioridad=1;
+        LocalDate fecha=LocalDate.now();
+
+        tareaController.crearTarea(nombre,descripcion,prioridad,fecha);
+
+        String nuevonombre="nuevoNombre";
+        String nuevadescripcion="nuevaDescripcion";
+        String nuevaprioridad="4";
+        int numerocomparar=Integer.parseInt(nuevaprioridad);
+        String nuevafecha="2020-01-01";
+        DateTimeFormatter formato = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toFormatter();
+        LocalDate fechaparacomparar=LocalDate.parse(nuevafecha,formato);
+
+        //Act
+        tareaController.modificarTarea("nombre","descripcionTarea",nuevadescripcion);
+        tareaController.modificarTarea("nombre","prioridad",nuevaprioridad);
+        tareaController.modificarTarea("nombre","fechaEntrega",nuevafecha);
+        tareaController.modificarTarea("nombre","nombreTarea",nuevonombre);
+
+        //Assert
+        List<Tarea> listaTarea=tareaController.listatareas;
+        Tarea tarea=listaTarea.get(0);
+        assertEquals(nuevonombre,tarea.getNombreTarea());
+        assertEquals(nuevadescripcion,tarea.getDescripcionTarea());
+        assertEquals(numerocomparar,tarea.getPrioridad());
+        assertEquals(fechaparacomparar,tarea.getFechaEntrega());
     }
 }
