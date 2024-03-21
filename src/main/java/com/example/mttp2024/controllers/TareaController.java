@@ -5,104 +5,102 @@ import com.example.mttp2024.models.Tarea;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class TareaController {
 
-    public List<Tarea> listatareas= new ArrayList<>();
-    public void crearTarea(){
-        System.out.println("Ingrese nombre de tarea");
-        Scanner scan=new Scanner(System.in);
-        String taskname=scan.nextLine();
-        System.out.println("Ingrese descripcion");
-        String taskdescription=scan.nextLine();
-        System.out.println("Ingrese prioridad");
-        Scanner scp=new Scanner(System.in);
-        int prior= scp.nextInt();
-        System.out.println("Ingrese fecha de entrega: dd-mm-yyyy");
-        String txtdate= scan.nextLine();
-        DateTimeFormatter format=new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("dd-MM-yyyy")).toFormatter();
-        LocalDate taskdate=LocalDate.parse(txtdate,format);
-        if(existe(taskname)){
-            System.out.println("El nombre de la tarea ya existe; tarea no agreagada");
-        }else{
-            listatareas.add(new Tarea(taskname,taskdescription,prior,taskdate));
-            System.out.println("Tarea agregada");
+    public List<Tarea> listatareas = new ArrayList<>();
+
+    public void crearTarea(String nombre, String descripcion, String prioridad, String fecha) {
+        int num = Integer.parseInt(prioridad);
+        DateTimeFormatter formato = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toFormatter();
+        LocalDate fechaformate = LocalDate.parse(fecha, formato);
+        try {
+            if (existe(nombre)) {
+                throw new ExisteException("El nombre del evento ha sido agrgado");
+            } else {
+                listatareas.add(new Tarea(nombre, descripcion, num, fechaformate));
+                System.out.println("Tarea agregada");
+            }
+        } catch (ExisteException x) {
+            System.out.println(x.toString());
         }
     }
-    public boolean existe(String target){
+
+    public boolean existe(String target) {
         boolean r = false;
-        for(Tarea i:listatareas){
+        for (Tarea i : listatareas) {
             r = target.trim().equalsIgnoreCase(i.getNombreTarea().trim());
         }
         return r;
     }
-    public void modificarTarea(){
-        System.out.println("Ingrese tarea a modificar");
-        Scanner mt=new Scanner(System.in);
-        String target=mt.nextLine();
-        for(Tarea j:listatareas){
-            if(target.trim().equalsIgnoreCase(j.getNombreTarea())){
-                System.out.println("Indique parametro a modificar:\n1.Nombre\n2.Descripción\n3.Prioridad\n4.Fecha de Entrega");
-                Scanner sw=new Scanner(System.in);
-                int val=sw.nextInt();
-                switch (val){
-                    case 1: System.out.println("Ingrese nuevo nombre de la tarea");
-                        String nuevoname=mt.nextLine();
-                        j.setNombreTarea(nuevoname);
-                        break;
-                    case 2: System.out.println("Ingrese nuevo descripción de la tarea");
-                        String nuevodescrip=mt.nextLine();
-                        j.setDescripcionTarea(nuevodescrip);
-                        break;
-                    case 3: System.out.println("Ingrese nueva prioridad de la tarea");
-                        int nuevoprior=sw.nextInt();
-                        j.setPrioridad(nuevoprior);
-                        break;
-                    case 4: System.out.println("Ingrese nueva fecha de entrega");
-                        String ntxtdate=mt.nextLine();
-                        DateTimeFormatter formato=new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("dd-MM-yyyy")).toFormatter();
-                        LocalDate newdate=LocalDate.parse(ntxtdate,formato);
-                        j.setFechaEntrega(newdate);
-                        break;
-                    default:System.out.println("La opncion ingresada no es valida");
-                }
-            }else{
-                System.out.println("La tarea especificada no existe");
+
+    public void modificarTarea(String nombre, String atributo, String nuevovalor) {
+        int indice = 0;
+        for (Tarea j : listatareas) {
+            if (nombre.trim().equalsIgnoreCase(j.getNombreTarea())) {
+                indice = listatareas.indexOf(j);
+            } else {
+                System.out.println("La tarea no existe");
             }
         }
+        switch (atributo) {
+            case "nombreTarea":
+                listatareas.get(indice).setNombreTarea(nuevovalor);
+                break;
+            case "descripcionTarea":
+                listatareas.get(indice).setDescripcionTarea(nuevovalor);
+                break;
+            case "prioridad":
+                int numero = Integer.parseInt(nuevovalor);
+                listatareas.get(indice).setPrioridad(numero);
+                break;
+            case "fechaEntrega":
+                DateTimeFormatter formato = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("dd-MM-yyyy")).toFormatter();
+                LocalDate newdate = LocalDate.parse(nuevovalor, formato);
+                listatareas.get(indice).setFechaEntrega(newdate);
+                break;
+            default:
+                System.out.println("La opncion ingresada no es valida");
+        }
     }
-    public void eliminarTarea(String nombre){
-        for(Tarea k:listatareas){
-            if(nombre.trim().equalsIgnoreCase(k.getNombreTarea())){
+
+
+    public void eliminarTarea(String nombre) {
+        for (Tarea k : listatareas) {
+            if (nombre.trim().equalsIgnoreCase(k.getNombreTarea())) {
                 listatareas.remove(k);
                 System.out.println("Tarea eliminada");
                 return;
-            }else{
+            } else {
                 System.out.println("La tarea especificada no existe");
             }
         }
     }
-    public void mostraCreacion(){
-        for(Tarea l:listatareas){
-            System.out.println("Nombre:"+l.getNombreTarea()+"\nDescripcion:"+l.getDescripcionTarea()+"\nPrioridad:"+l.getPrioridad()+"\nFecha de Entrega:"+l.getFechaEntrega());
+
+    public void mostraCreacion() {
+        for (Tarea l : listatareas) {
+            System.out.println("Nombre:" + l.getNombreTarea() + "\nDescripcion:" + l.getDescripcionTarea() + "\nPrioridad:" + l.getPrioridad() + "\nFecha de Entrega:" + l.getFechaEntrega());
             System.out.println("____________________________________________");
         }
     }
-    public void mostrarPrioridad(){
+
+    public void mostrarPrioridad() {
         List<Tarea> listaprior = new ArrayList<>(listatareas);
         Tarea aux;
-        for(int j=0;j<listaprior.size();j++){
-            for (int i=0;i<listaprior.size()-1;i++){
-                if(listaprior.get(i).getPrioridad()<listaprior.get(i+1).getPrioridad()){
-                    aux=listaprior.get(i);
-                    listaprior.set(i,listaprior.get(i+1));
-                    listaprior.set(i+1,aux);
+        for (int j = 0; j < listaprior.size(); j++) {
+            for (int i = 0; i < listaprior.size() - 1; i++) {
+                if (listaprior.get(i).getPrioridad() < listaprior.get(i + 1).getPrioridad()) {
+                    aux = listaprior.get(i);
+                    listaprior.set(i, listaprior.get(i + 1));
+                    listaprior.set(i + 1, aux);
                 }
             }
         }
-        for(Tarea l:listaprior){
-            System.out.println("Nombre:"+l.getNombreTarea()+"\nDescripcion:"+l.getDescripcionTarea()+"\nPrioridad:"+l.getPrioridad()+"\nFecha de Entrega:"+l.getFechaEntrega());
+        for (Tarea l : listaprior) {
+            System.out.println("Nombre:" + l.getNombreTarea() + "\nDescripcion:" + l.getDescripcionTarea() + "\nPrioridad:" + l.getPrioridad() + "\nFecha de Entrega:" + l.getFechaEntrega());
             System.out.println("____________________________________________");
         }
     }
