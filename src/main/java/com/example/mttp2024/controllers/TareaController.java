@@ -13,15 +13,12 @@ public class TareaController {
 
     public List<Tarea> listatareas = new ArrayList<>();
 
-    public void crearTarea(String nombre, String descripcion, String prioridad, String fecha) {
-        int num = Integer.parseInt(prioridad);
-        DateTimeFormatter formato = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toFormatter();
-        LocalDate fechaformate = LocalDate.parse(fecha, formato);
+    public void crearTarea(String nombre, String descripcion, int prioridad, LocalDate fecha) {
         try {
             if (existe(nombre)) {
                 throw new ExisteException("El nombre del evento ha sido agrgado");
             } else {
-                listatareas.add(new Tarea(nombre, descripcion, num, fechaformate));
+                listatareas.add(new Tarea(nombre, descripcion, prioridad, fecha));
                 System.out.println("Tarea agregada");
             }
         } catch (ExisteException x) {

@@ -9,6 +9,7 @@ import com.example.mttp2024.models.Tarea;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -23,19 +24,19 @@ public class TareaControllerTest {
         TareaController tareaController = new TareaController();
         String nombre = "Tarea de prueba";
         String descripcion = "Descripción de la tarea de prueba";
-        int prioridad = 1;
-        LocalDate fechaEntrega = LocalDate.now();
+        int prioridad=1;
+        LocalDate fechaEntrega=LocalDate.now();
 
         // Act
-        //tareaController.crearTarea(nombre, descripcion, prioridad, fechaEntrega);
+        tareaController.crearTarea(nombre, descripcion, prioridad, fechaEntrega);
 
-        /* Assert
-        List<Tarea> listaTareas = tareaController.getListaTareas();
+       //Assert
+        List<Tarea> listaTareas = tareaController.listatareas;
         assertEquals(1, listaTareas.size());
         Tarea tarea = listaTareas.get(0);
         assertEquals(nombre, tarea.getNombreTarea());
         assertEquals(descripcion, tarea.getDescripcionTarea());
         assertEquals(prioridad, tarea.getPrioridad());
-        assertEquals(fechaEntrega, tarea.getFechaEntrega());*/
+        assertEquals(fechaEntrega, tarea.getFechaEntrega());
     }
 }
