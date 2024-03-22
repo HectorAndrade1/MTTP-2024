@@ -76,4 +76,23 @@ public class TareaControllerTest {
         assertEquals(numerocomparar,tarea.getPrioridad());
         assertEquals(fechaparacomparar,tarea.getFechaEntrega());
     }
+
+    @Test
+    void eliminarTarea_DeberiaEliminarTareaDeLista(){
+        // Arrange
+        TareaController tareaController = new TareaController();
+        String nombre = "Tarea de prueba";
+        String descripcion = "Descripción de la tarea de prueba";
+        int prioridad=1;
+        LocalDate fechaEntrega=LocalDate.now();
+
+        tareaController.crearTarea(nombre, descripcion, prioridad, fechaEntrega);
+
+        //Act
+        tareaController.eliminarTarea(nombre);
+
+        //Assert
+        List<Tarea> listaTarea=tareaController.listatareas;
+        assertEquals(0,listaTarea.size());
+    }
 }
