@@ -22,15 +22,12 @@ class ExisteException extends Exception {
 public class EventoController {
     public List<Evento> listaeventos = new ArrayList<>();
 
-    public void crearEvento(String evename, String evedescription, String etxtdate, String horaini, String horafin) {
-        LocalDate evedate = formatoFecha(etxtdate);
-        LocalTime evehoraini = formatoHora(horaini);
-        LocalTime evehorafin = formatoHora(horafin);
+    public void crearEvento(String nombre, String descripcion, LocalDate fecha, LocalTime horaini, LocalTime horafin) {
         try {
-            if (existe(evename)) {
+            if (existe(nombre)) {
                 throw new ExisteException("El nombre del evento ya existe");
             } else {
-                listaeventos.add(new Evento(evename, evedescription, evedate, evehoraini, evehorafin));
+                listaeventos.add(new Evento(nombre, descripcion, fecha, horaini, horafin));
                 System.out.println("Evento agregado");
             }
         } catch (ExisteException x) {
@@ -38,15 +35,12 @@ public class EventoController {
         }
     }
 
-    public void crearEvento(String nombre, String descripcion, String ubicacion, String txtdate, String horaini, String horafin) {
-        LocalDate evedate = formatoFecha(txtdate);
-        LocalTime evehoraini = formatoHora(horaini);
-        LocalTime evehorafin = formatoHora(horafin);
+    public void crearEvento(String nombre, String descripcion, String ubicacion, LocalDate fecha, LocalTime horaini, LocalTime horafin) {
         try {
             if (existe(nombre)) {
                 throw new ExisteException("El nombre del evento ha sido agrgado");
             } else {
-                listaeventos.add(new Evento(nombre, descripcion, ubicacion, evedate, evehoraini, evehorafin));
+                listaeventos.add(new Evento(nombre, descripcion, ubicacion, fecha, horaini, horafin));
                 System.out.println("Evento agregado");
             }
         } catch (ExisteException x) {
@@ -63,13 +57,13 @@ public class EventoController {
     }
     public LocalDate formatoFecha(String texto){
         DateTimeFormatter dateformat = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toFormatter();
-        LocalDate fechaconformato = LocalDate.parse(texto, dateformat);
-        return fechaconformato;
+        LocalDate fechacambiada;
+        return fechacambiada= LocalDate.parse(texto, dateformat);
     }
     public LocalTime formatoHora(String texto){
         DateTimeFormatter horaformat = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("HH:mm")).toFormatter();
-        LocalTime horaconformato = LocalTime.parse(texto, horaformat);
-        return horaconformato;
+        LocalTime horaconformato;
+        return horaconformato = LocalTime.parse(texto, horaformat);
     }
 
     public void modificarEvento(String nombre, String atributo, String nuevovalor) {
@@ -100,19 +94,13 @@ public class EventoController {
                 }
                 break;
             case "fechaEvento":
-                DateTimeFormatter formato = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("dd-MM-yyyy")).toFormatter();
-                LocalDate newdate = LocalDate.parse(nuevovalor, formato);
-                listaeventos.get(indice).setFechaEvento(newdate);
+                listaeventos.get(indice).setFechaEvento(formatoFecha(nuevovalor));
                 break;
             case "horaInicioEvento":
-                DateTimeFormatter inihora = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("HH:mm")).toFormatter();
-                LocalTime newhoraini = LocalTime.parse(nuevovalor, inihora);
-                listaeventos.get(indice).setHoraInicioEvento(newhoraini);
+                listaeventos.get(indice).setHoraInicioEvento(formatoHora(nuevovalor));
                 break;
             case "horaFinEvento":
-                DateTimeFormatter finhora = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("HH:mm")).toFormatter();
-                LocalTime newhorafin = LocalTime.parse(nuevovalor, finhora);
-                listaeventos.get(indice).setHoraFinEvento(newhorafin);
+                listaeventos.get(indice).setHoraFinEvento(formatoHora(nuevovalor));
                 break;
             default:
                 System.out.println("No se puede modificar ese atributo");
@@ -133,7 +121,7 @@ public class EventoController {
 
     public void listarEventos() {
         for (Evento l : listaeventos) {
-            System.out.println("Nombre:" + l.getNombreEvento() + "\nDescripción:" + l.getDescripcionEvento()/*+"\nUbicación:"+l.getUbicacion()*/ + "\nFecha del evento:" + l.getFechaEvento() + "\nHora de inicio:" + l.getHoraFinEvento() + "\nHora fin de evento" + l.getHoraFinEvento());
+            System.out.println("Nombre:" + l.getNombreEvento() + "\nDescripción:" + l.getDescripcionEvento() + "\nUbicación:"+l.getUbicacion() + "\nFecha del evento:" + l.getFechaEvento() + "\nHora de inicio:" + l.getHoraFinEvento() + "\nHora fin de evento" + l.getHoraFinEvento());
             System.out.println("___________________________________");
         }
     }
