@@ -11,11 +11,8 @@ import java.util.List;
 
 class ExisteException extends Exception {
     String s;
-
     ExisteException(String s) {
-        this.s = s;
-    }
-
+    this.s = s;}
     public String toString() {
         return s;
     }
@@ -26,11 +23,9 @@ public class EventoController {
     public List<Evento> listaeventos = new ArrayList<>();
 
     public void crearEvento(String evename, String evedescription, String etxtdate, String horaini, String horafin) {
-        DateTimeFormatter dateformat = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toFormatter();
-        LocalDate evedate = LocalDate.parse(etxtdate, dateformat);
-        DateTimeFormatter horaformat = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("HH:mm")).toFormatter();
-        LocalTime evehoraini = LocalTime.parse(horaini, horaformat);
-        LocalTime evehorafin = LocalTime.parse(horafin, horaformat);
+        LocalDate evedate = formatoFecha(etxtdate);
+        LocalTime evehoraini = formatoHora(horaini);
+        LocalTime evehorafin = formatoHora(horafin);
         try {
             if (existe(evename)) {
                 throw new ExisteException("El nombre del evento ya existe");
@@ -43,12 +38,10 @@ public class EventoController {
         }
     }
 
-    public void crearEvento(String nombre, String descripcion, String ubicacion, String txtdate, String txthoraini, String txthorafin) {
-        DateTimeFormatter dateformat = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toFormatter();
-        LocalDate evedate = LocalDate.parse(txtdate, dateformat);
-        DateTimeFormatter horaformat = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("HH:mm")).toFormatter();
-        LocalTime evehoraini = LocalTime.parse(txthoraini, horaformat);
-        LocalTime evehorafin = LocalTime.parse(txthorafin, horaformat);
+    public void crearEvento(String nombre, String descripcion, String ubicacion, String txtdate, String horaini, String horafin) {
+        LocalDate evedate = formatoFecha(txtdate);
+        LocalTime evehoraini = formatoHora(horaini);
+        LocalTime evehorafin = formatoHora(horafin);
         try {
             if (existe(nombre)) {
                 throw new ExisteException("El nombre del evento ha sido agrgado");
@@ -68,8 +61,18 @@ public class EventoController {
         }
         return r;
     }
+    public LocalDate formatoFecha(String texto){
+        DateTimeFormatter dateformat = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toFormatter();
+        LocalDate fechaconformato = LocalDate.parse(texto, dateformat);
+        return fechaconformato;
+    }
+    public LocalTime formatoHora(String texto){
+        DateTimeFormatter horaformat = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("HH:mm")).toFormatter();
+        LocalTime horaconformato = LocalTime.parse(texto, horaformat);
+        return horaconformato;
+    }
 
-    public void ModificarEvento(String nombre, String atributo, String nuevovalor) {
+    public void modificarEvento(String nombre, String atributo, String nuevovalor) {
         int indice = 0;
         for (Evento j : listaeventos) {
             if (nombre.trim().equalsIgnoreCase(j.getNombreEvento())) {
