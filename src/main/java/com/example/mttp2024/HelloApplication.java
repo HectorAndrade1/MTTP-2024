@@ -1,6 +1,5 @@
 package com.example.mttp2024;
 
-import com.example.mttp2024.controllers.TareaController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

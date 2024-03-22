@@ -1,12 +1,12 @@
 package com.example.mttp2024.controllers;
 
+import com.example.mttp2024.exceptions.ExisteException;
 import com.example.mttp2024.models.Tarea;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class TareaController {
@@ -32,6 +32,12 @@ public class TareaController {
             r = target.trim().equalsIgnoreCase(i.getNombreTarea().trim());
         }
         return r;
+    }
+
+    public LocalDate formatoFecha(String texto){
+        DateTimeFormatter dateformat = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toFormatter();
+        LocalDate fechaconformato = LocalDate.parse(texto, dateformat);
+        return fechaconformato;
     }
 
     public void modificarTarea(String nombre, String atributo, String nuevovalor) {

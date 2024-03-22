@@ -1,5 +1,6 @@
 package com.example.mttp2024.controllers;
 
+import com.example.mttp2024.exceptions.ExisteException;
 import com.example.mttp2024.models.Evento;
 
 import java.time.LocalDate;
@@ -8,16 +9,6 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
 import java.util.List;
-
-class ExisteException extends Exception {
-    String s;
-    ExisteException(String s) {
-    this.s = s;}
-    public String toString() {
-        return s;
-    }
-
-}
 
 public class EventoController {
     public List<Evento> listaeventos = new ArrayList<>();
