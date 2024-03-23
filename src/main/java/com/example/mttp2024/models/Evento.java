@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Evento {
-
+    private  int idEvento;
     private String nombreEvento;
     private String descripcionEvento;
     private String ubicacion;
@@ -12,7 +12,7 @@ public class Evento {
     private LocalTime horaInicioEvento;
     private LocalTime horaFinEvento;
 
-    //contructor con todos los atributos
+    //contructor con todos los atributos nemos id
     public Evento(String nombreEvento,String descripcionEvento,String ubicacion,LocalDate fechaEvento,
                   LocalTime horaInicioEvento,LocalTime horaFinEvento){
 
@@ -36,7 +36,22 @@ public class Evento {
         this.horaFinEvento=horaFinEvento;
 
     }
+    //constructor con id
+    public Evento(int id, String nombreEvento, String descripcionEvento,
+                  LocalDate fecha, LocalTime inicio, LocalTime fin) {
 
+        idEvento=id;
+        this.nombreEvento=nombreEvento;
+        this.descripcionEvento=descripcionEvento;
+        fechaEvento=fecha;
+        horaInicioEvento=inicio;
+        horaFinEvento=fin;
+    }
+
+
+    public int getIdEvento() {
+        return idEvento;
+    }
 
     public String getNombreEvento() {
         return nombreEvento;
