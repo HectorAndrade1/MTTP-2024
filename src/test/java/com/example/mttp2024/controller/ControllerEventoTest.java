@@ -14,8 +14,8 @@ public class ControllerEventoTest {
         // Crea una instancia del ControllerEvento
         ControllerEvento controller = new ControllerEvento();
 
-        // Llama al método que deseas probar
-        Evento evento = controller.recuperarEvento(3);
+        // Llama al método que deseas proba
+        Evento evento = controller.recuperarEvento(4);
 
         if (evento!=null){
             System.out.println("existe el evento:"+evento.getNombreEvento()+evento.getFechaEvento());
