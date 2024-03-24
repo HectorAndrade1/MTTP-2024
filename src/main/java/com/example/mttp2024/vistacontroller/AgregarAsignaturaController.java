@@ -12,7 +12,7 @@ public class AgregarAsignaturaController {
 
     @FXML
     void textoAgregarAsignaturaNombre(ActionEvent event) {
-
+            String texto=event.toString();
     }
 
 }
