@@ -4,14 +4,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="260.0" type="VBox" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Opciones1Controller">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="260.0" type="VBox" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Opciones1Controller">
    <children>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="260.0">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="260.0">
          <children>
-            <Button layoutX="17.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnAsignaturaButtonClick" prefHeight="30.0" prefWidth="227.0" text="ASIGNATURA" />
-            <Button layoutX="17.0" layoutY="58.0" mnemonicParsing="false" onAction="#btnClaseButtonClick" prefHeight="30.0" prefWidth="227.0" text="CLASE" />
-            <Button layoutX="17.0" layoutY="100.0" mnemonicParsing="false" onAction="#btnTareaButtonClick" prefHeight="30.0" prefWidth="227.0" text="TAREA" />
-            <Button layoutX="17.0" layoutY="146.0" mnemonicParsing="false" onAction="#btnEventoButtonClick" prefHeight="30.0" prefWidth="227.0" text="EVENTO" />
+            <Button layoutX="17.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnAgregarButtonClick" prefHeight="30.0" prefWidth="227.0" text="AGREGAR" />
+            <Button layoutX="17.0" layoutY="60.0" mnemonicParsing="false" onAction="#btnModificarButtonClick" prefHeight="30.0" prefWidth="227.0" text="MODIFICAR" />
+            <Button layoutX="17.0" layoutY="106.0" mnemonicParsing="false" onAction="#btnEliminarButtonClick" prefHeight="30.0" prefWidth="227.0" text="ELIMINAR" />
          </children>
       </Pane>
    </children>

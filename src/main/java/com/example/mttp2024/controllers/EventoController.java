@@ -25,7 +25,7 @@ public class EventoController {
                 throw new ExisteException("El nombre del evento ya existe");
             } else {
                 try (Connection conection=dataBase.connection()) {
-                    String query = String.format("INSERT INTO evento VALUES ('%s','%s','%s','%s','%s','%s')",nombreEvento , descripcionEvento , fecha , horaInicio , horaFin , ubicacion );
+                    String query = String.format("INSERT INTO evento (nombre_evento,descripcion_evento,fecha_evento,hora_inicio_evento,hora_fin_evento,ubicacion)VALUES ('%s','%s','%s','%s','%s','%s')",nombreEvento , descripcionEvento , fecha , horaInicio , horaFin , ubicacion );
                     PreparedStatement statement = conection.prepareStatement(query);
                     ResultSet resultado=statement.executeQuery();
                     if(resultado.next()){
@@ -40,6 +40,22 @@ public class EventoController {
             System.out.println(x.toString());
         }
     }
+
+    public void modificarEventoEnDatabase(int id, String atributo, String nuevovalor) throws SQLException {
+        try (Connection conection=dataBase.connection()){
+            String query=String.format("UPDATE evento SET %s='%s' WHERE id_evento=%d",atributo,nuevovalor,id);
+            PreparedStatement statement=conection.prepareStatement(query);
+            ResultSet resultado=statement.executeQuery();
+            if(resultado.next()){
+                System.out.println("Atributo modificado");
+            }else {
+                System.out.println("No se pudo modificar atributo");
+            }
+
+        }
+
+    }
+
     public void eliminarEventoDeDatabase(int id) throws SQLException{
         try (Connection conection=dataBase.connection()){
             String query= String.format("DELETE * From evento WHERE id_evento= %d",id);
@@ -110,22 +126,6 @@ public class EventoController {
         DateTimeFormatter horaformat = new DateTimeFormatterBuilder().append(DateTimeFormatter.ofPattern("HH:mm:ss")).toFormatter();
         return LocalTime.parse(texto, horaformat);
     }
-
-    public void modificarEventoEnDatabase(int id, String atributo, String nuevovalor) throws SQLException {
-        try (Connection conection=dataBase.connection()){
-            String query=String.format("UPDATE evento SET %s='%s' WHERE id_evento=%d",atributo,nuevovalor,id);
-            PreparedStatement statement=conection.prepareStatement(query);
-            ResultSet resultado=statement.executeQuery();
-            if(resultado.next()){
-                System.out.println("Atributo modificado");
-            }else {
-                System.out.println("No se pudo modificar atributo");
-            }
-
-        }
-
-    }
-
 
     public ArrayList<Evento> listarEventos() throws SQLException {
         ArrayList<Evento> listaEventos = new ArrayList<>();

@@ -12,7 +12,7 @@
          <children>
             <Label layoutX="34.0" layoutY="35.0" prefHeight="18.0" prefWidth="171.0" text="NOMBRE DE ASIGNATURA:" />
             <Button layoutX="511.0" layoutY="96.0" mnemonicParsing="false" onAction="#btnGuardarAsignaturaClick" text="GUARDAR" />
-            <TextField layoutX="213.0" layoutY="31.0" onAction="#textoAsignaturaLleno" prefHeight="26.0" prefWidth="341.0" />
+            <TextField layoutX="213.0" layoutY="31.0" onAction="#textoAgregarAsignaturaNombre" prefHeight="26.0" prefWidth="341.0" />
          </children>
       </Pane>
    </children>
