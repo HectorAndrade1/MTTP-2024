@@ -21,6 +21,11 @@
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="167.0">
                      <children>
+                        <ImageView fitHeight="478.0" fitWidth="164.0" opacity="0.41" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../../java/com/example/mttp2024/imagenes/pngwing.com%20(2).png" />
+                           </image>
+                        </ImageView>
                         <Button layoutX="11.0" layoutY="348.0" mnemonicParsing="false" onAction="#btnClaseButtonClick" prefHeight="30.0" prefWidth="143.0" text="CLASE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -92,6 +97,11 @@
                             </Tab>
                           </tabs>
                         </TabPane>
+                        <ImageView fitHeight="183.0" fitWidth="682.0" layoutY="332.0" pickOnBounds="true" translateZ="-1.0" AnchorPane.topAnchor="332.0">
+                           <image>
+                              <Image url="@../../../../java/com/example/mttp2024/imagenes/pngwing.com%20(3).png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
               </items>
