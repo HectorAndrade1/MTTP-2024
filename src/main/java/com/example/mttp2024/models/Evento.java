@@ -12,10 +12,10 @@ public class Evento {
     private LocalTime horaInicioEvento;
     private LocalTime horaFinEvento;
 
-    //contructor con todos los atributos nemos id
-    public Evento(String nombreEvento,String descripcionEvento,String ubicacion,LocalDate fechaEvento,
+    //contructor con todos los atributos
+    public Evento(int id,String nombreEvento,String descripcionEvento,String ubicacion,LocalDate fechaEvento,
                   LocalTime horaInicioEvento,LocalTime horaFinEvento){
-
+        this.idEvento=id;
         this.nombreEvento=nombreEvento;
         this.descripcionEvento=descripcionEvento;
         this.ubicacion=ubicacion;
@@ -25,9 +25,9 @@ public class Evento {
 
     }
     //constructor sin atributo de ubicacion
-    public Evento(String nombreEvento,String descripcionEvento,LocalDate fechaEvento,
+    public Evento(int id,String nombreEvento,String descripcionEvento,LocalDate fechaEvento,
                   LocalTime horaInicioEvento,LocalTime horaFinEvento){
-
+        this.idEvento=id;
         this.nombreEvento=nombreEvento;
         this.descripcionEvento=descripcionEvento;
         ubicacion=null;
@@ -36,18 +36,6 @@ public class Evento {
         this.horaFinEvento=horaFinEvento;
 
     }
-    //constructor con id
-    public Evento(int id, String nombreEvento, String descripcionEvento,
-                  LocalDate fecha, LocalTime inicio, LocalTime fin) {
-
-        idEvento=id;
-        this.nombreEvento=nombreEvento;
-        this.descripcionEvento=descripcionEvento;
-        fechaEvento=fecha;
-        horaInicioEvento=inicio;
-        horaFinEvento=fin;
-    }
-
 
     public int getIdEvento() {
         return idEvento;

@@ -38,7 +38,7 @@ public class ControllerEvento {
                 String hora_fin_evento = resultado.getString("hora_fin_evento");
 
                 LocalDate fecha= parseFecha(fecha_evento);
-                LocalTime inicio= parseHora(hora_fin_evento);
+                LocalTime inicio= parseHora(hora_inicio_evento);
                 LocalTime fin= parseHora(hora_fin_evento);
                 Evento evento=new Evento(id,nombre_evento,descripcion_evento,fecha,inicio,fin);
                 return evento;
