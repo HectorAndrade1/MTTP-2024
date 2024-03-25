@@ -1,13 +1,8 @@
 package com.example.mttp2024.vistacontroller;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.stage.*;
-import javafx.scene.control.*;
-
-
-
-import javafx.event.ActionEvent;
 
 public class MenuController {
 
@@ -32,27 +27,27 @@ public class MenuController {
     }
 
     @FXML
-    void tabAsignaturasSelected(ActionEvent event) {
+    void tabAsignaturasSelected(Event event) {
 
     }
 
     @FXML
-    void tabClasesSelected(ActionEvent event) {
+    void tabClasesSelected(Event event) {
 
     }
 
     @FXML
-    void tabEventosSelected(ActionEvent event) {
+    void tabEventosSelected(Event event) {
 
     }
 
     @FXML
-    void tabHorarioSelected(ActionEvent event) {
+    void tabHorarioSelected(Event event) {
 
     }
 
     @FXML
-    void tabTareasSelected(ActionEvent event) {
+    void tabTareasSelected(Event event) {
 
     }
 
