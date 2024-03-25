@@ -19,8 +19,6 @@ public class HelloApplication extends Application {
         stage.getIcons().add(imagen);
         stage.setTitle("Organizador de Tareas");
         stage.setScene(scene);
-        MenuController menu=fxmlLoader.getController();
-        menu.setStage(stage);
         stage.show();
     }
 

@@ -4,15 +4,19 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import javax.xml.stream.Location;
 import java.io.IOException;
+
 
 public class MenuController {
 
-    private Stage stage;
     @FXML
     private Button botonasignaturas;
 
@@ -40,23 +44,15 @@ public class MenuController {
     @FXML
     private Tab tabTareas;
 
-    public void setStage(Stage primarystage){
-        stage=primarystage;
-    }
+    private Stage stage=new Stage();
 
     @FXML
     void btnAsignaturaButtonClick(ActionEvent event) throws IOException {
-        int id=1;
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("resources/com/example/mttp2024/opciones 1.fxml"));
-        Scene scene=new Scene(loader.load());
-        Opciones1Controller opciones1=loader.getController();
-        Scene scene1=new Scene(loader.load());
-        Stage stage1=new Stage();
-        stage1.setScene(scene1);
-        opciones1.init(id,stage1,this);
-        stage1.show();
-
-
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("com/example/mttp2024/opciones 1.fxml"));
+        Scene scene = new Scene(loader.load(),854,480);
+        stage.setTitle("Organizador de Tareas");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
