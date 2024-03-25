@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -15,102 +15,115 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="854.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.example.mttp2024.vistacontroller.MenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mttp2024.vistacontroller.MenuController">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="854.0">
          <children>
-            <SplitPane dividerPositions="0.19483568075117372" prefHeight="480.0" prefWidth="854.0">
-              <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="167.0" SplitPane.resizableWithParent="false">
-                     <children>
-                        <ImageView fitHeight="478.0" fitWidth="164.0" opacity="0.41" pickOnBounds="true">
-                           <image>
-                              <Image url="@../../../imagenes/fondocolorido.png" />
-                           </image>
-                        </ImageView>
-                        <Button fx:id="botonclase" layoutX="11.0" layoutY="348.0" mnemonicParsing="false" onAction="#btnClaseButtonClick" prefHeight="30.0" prefWidth="143.0" text="CLASE">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor></Button>
-                        <Button fx:id="botonevento" layoutX="11.0" layoutY="434.0" mnemonicParsing="false" onAction="#btnEventoButtonCLick" prefHeight="30.0" prefWidth="143.0" text="EVENTO">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor></Button>
-                        <Button fx:id="botontareas" layoutX="11.0" layoutY="390.0" mnemonicParsing="false" onAction="#btnTareaButtonClick" prefHeight="30.0" prefWidth="143.0" text="TAREAS">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor></Button>
-                        <Button fx:id="botonasignaturas" layoutX="12.0" layoutY="306.0" mnemonicParsing="false" onAction="#btnAsignaturaButtonClick" prefHeight="30.0" prefWidth="141.0" text="ASIGNATURA">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor></Button>
-                        <ImageView fitHeight="266.0" fitWidth="141.0" layoutX="10.0" layoutY="14.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../../../imagenes/pngwing.com.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="783.0">
-                     <children>
-                        <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="682.0" tabClosingPolicy="UNAVAILABLE">
-                          <tabs>
-                              <Tab fx:id="tabAsignaturas" onSelectionChanged="#tabAsignaturasSelected" text="ASIGNATURAS">
-                                <content>
-                                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="420.0" prefWidth="683.0" />
-                                </content>
-                              </Tab>
-                              <Tab fx:id="tabClases" onSelectionChanged="#tabClasesSelected" text="CLASES">
-                                <content>
-                                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="420.0" prefWidth="683.0" />
-                                </content>
-                              </Tab>
-                            <Tab fx:id="tabEventos" onSelectionChanged="#tabEventosSelected" text="EVENTOS">
-                              <content>
-                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="420.0" prefWidth="683.0" />
-                              </content>
-                            </Tab>
-                              <Tab fx:id="tabTareas" onSelectionChanged="#tabTareasSelected" text="TAREAS">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="420.0" prefWidth="683.0" />
-                                </content>
-                              </Tab>
-                            <Tab fx:id="tabHorario" onSelectionChanged="#tabHorarioSelected" text="HORARIO">
-                              <content>
-                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="420.0" prefWidth="683.0">
-                                       <children>
-                                          <TableView layoutX="14.0" layoutY="14.0" prefHeight="420.0" prefWidth="680.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <columns>
-                                              <TableColumn prefWidth="85.0" text="HORAS" />
-                                              <TableColumn prefWidth="85.0" text="LUNES" />
-                                                <TableColumn prefWidth="85.0" text="MARTES" />
-                                                <TableColumn prefWidth="85.0" text="MIERCOLES" />
-                                                <TableColumn prefWidth="85.0" text="JUEVES" />
-                                                <TableColumn prefWidth="85.0" text="VIERNES" />
-                                                <TableColumn prefWidth="85.0" text="SABADO" />
-                                                <TableColumn prefWidth="85.0" text="DOMINGO" />
-                                            </columns>
-                                             <columnResizePolicy>
-                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                             </columnResizePolicy>
-                                             <cursor>
-                                                <Cursor fx:constant="DEFAULT" />
-                                             </cursor>
-                                          </TableView>
-                                       </children></AnchorPane>
-                              </content>
-                            </Tab>
-                          </tabs>
-                        </TabPane>
-                        <ImageView fitHeight="183.0" fitWidth="682.0" layoutY="332.0" pickOnBounds="true" translateZ="0" AnchorPane.topAnchor="332.0">
-                           <image>
-                              <Image url="@../../../imagenes/fondoazul.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
-              </items>
-            </SplitPane>
+            <Pane prefHeight="480.0" prefWidth="166.0">
+               <children>
+                  <ImageView fitHeight="480.0" fitWidth="166.0" opacity="0.73" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../imagenes/fondocolorido.png" />
+                     </image>
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                  </ImageView>
+                  <ImageView fitHeight="230.0" fitWidth="141.0" layoutX="11.0" layoutY="47.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../imagenes/pngwing.com.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="botonasignaturas" layoutX="12.0" layoutY="309.0" mnemonicParsing="false" onAction="#btnAsignaturaButtonClick" prefHeight="30.0" prefWidth="141.0" text="ASIGNATURA">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="botonevento" layoutX="11.0" layoutY="436.0" mnemonicParsing="false" onAction="#btnEventoButtonCLick" prefHeight="30.0" prefWidth="143.0" text="EVENTO">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="botontareas" layoutX="11.0" layoutY="394.0" mnemonicParsing="false" onAction="#btnTareaButtonClick" prefHeight="30.0" prefWidth="143.0" text="TAREAS">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="botonclase" layoutX="11.0" layoutY="352.0" mnemonicParsing="false" onAction="#btnClaseButtonClick" prefHeight="30.0" prefWidth="143.0" text="CLASE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis>
+            </Pane>
+            <Pane layoutX="166.0" prefHeight="480.0" prefWidth="688.0">
+               <children>
+                  <ImageView fitHeight="183.0" fitWidth="688.0" layoutY="297.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../imagenes/fondoazul.png" />
+                     </image>
+                  </ImageView>
+                  <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="688.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab fx:id="tabAsignaturas" onSelectionChanged="#tabAsignaturasSelected" text="ASIGNATURAS">
+                          <content>
+                            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="426.0" prefWidth="688.0" />
+                          </content>
+                        </Tab>
+                        <Tab fx:id="tabClases" onSelectionChanged="#tabClasesSelected" text="CLASES">
+                          <content>
+                            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="426.0" prefWidth="688.0" />
+                          </content>
+                        </Tab>
+                      <Tab fx:id="tabEventos" onSelectionChanged="#tabEventosSelected" text="EVENTOS">
+                        <content>
+                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="425.0" prefWidth="688.0" />
+                        </content>
+                      </Tab>
+                        <Tab fx:id="tabTareas" onSelectionChanged="#tabTareasSelected" text="TAREAS">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="420.0" prefWidth="688.0" />
+                          </content>
+                        </Tab>
+                      <Tab fx:id="tabHorario" onSelectionChanged="#tabHorarioSelected" text="HORARIO">
+                        <content>
+                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="420.0" prefWidth="688.0">
+                                 <children>
+                                    <TableView layoutX="14.0" layoutY="14.0" prefHeight="420.0" prefWidth="688.0" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn prefWidth="86.0" text="HORAS" />
+                                        <TableColumn prefWidth="86.0" text="LUNES" />
+                                          <TableColumn prefWidth="86.0" text="MARTES" />
+                                          <TableColumn prefWidth="86.0" text="MIERCOLES" />
+                                          <TableColumn prefWidth="86.0" text="JUEVES" />
+                                          <TableColumn prefWidth="86.0" text="VIERNES" />
+                                          <TableColumn prefWidth="85.0" text="SABADO" />
+                                          <TableColumn prefWidth="86.0" text="DOMINGO" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                  </TabPane>
+               </children>
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis>
+            </Pane>
          </children>
       </Pane>
    </children>
