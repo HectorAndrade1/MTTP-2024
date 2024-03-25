@@ -14,7 +14,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sugerencia menu kevin.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),854,480);
-        Image imagen=new Image("imagenes/logo.jpg");
+        Image imagen=new Image("imagenes/logo_chiquito-removebg-preview.png");
         stage.getIcons().add(imagen);
         stage.setTitle("Organizador de Tareas");
         stage.setScene(scene);
