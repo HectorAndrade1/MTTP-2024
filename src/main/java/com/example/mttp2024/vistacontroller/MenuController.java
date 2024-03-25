@@ -4,20 +4,15 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class MenuController implements Initializable{
+public class MenuController {
 
     private Stage stage;
-
     @FXML
     private Button botonasignaturas;
 
@@ -51,12 +46,14 @@ public class MenuController implements Initializable{
 
     @FXML
     void btnAsignaturaButtonClick(ActionEvent event) throws IOException {
+        int id=1;
         FXMLLoader loader=new FXMLLoader(getClass().getResource("resources/com/example/mttp2024/opciones 1.fxml"));
         Scene scene=new Scene(loader.load());
         Opciones1Controller opciones1=loader.getController();
         Scene scene1=new Scene(loader.load());
         Stage stage1=new Stage();
         stage1.setScene(scene1);
+        opciones1.init(id,stage1,this);
         stage1.show();
 
 
@@ -100,11 +97,6 @@ public class MenuController implements Initializable{
     @FXML
     void tabTareasSelected(Event event) {
 
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        //TODO
     }
 }
 

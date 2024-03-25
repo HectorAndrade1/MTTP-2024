@@ -1,5 +1,6 @@
 package com.example.mttp2024;
 
+import com.example.mttp2024.vistacontroller.MenuController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,6 +19,8 @@ public class HelloApplication extends Application {
         stage.getIcons().add(imagen);
         stage.setTitle("Organizador de Tareas");
         stage.setScene(scene);
+        MenuController menu=fxmlLoader.getController();
+        menu.setStage(stage);
         stage.show();
     }
 

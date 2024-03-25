@@ -2,13 +2,10 @@ package com.example.mttp2024.vistacontroller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class Opciones1Controller implements Initializable {
+public class Opciones1Controller {
 
     @FXML
     private Button botonAgregar;
@@ -34,8 +31,12 @@ public class Opciones1Controller implements Initializable {
 
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        //TODO
+    private MenuController menucontrol;
+    private Stage stage2;
+    private String opciones[]={"Asignatura","Clase,Tarea,Evento"};
+    public void init(int id, Stage stage1, MenuController menuController) {
+        String seleccion=opciones[id];
+        this.menucontrol=menuController;
+        this.stage2=stage1;
     }
 }
