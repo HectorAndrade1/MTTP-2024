@@ -16,6 +16,8 @@ import java.util.ResourceBundle;
 
 public class MenuController implements Initializable{
 
+    private Stage stage;
+
     @FXML
     private Button botonasignaturas;
 
@@ -43,8 +45,20 @@ public class MenuController implements Initializable{
     @FXML
     private Tab tabTareas;
 
+    public void setStage(Stage primarystage){
+        stage=primarystage;
+    }
+
     @FXML
-    void btnAsignaturaButtonClick(ActionEvent event) {
+    void btnAsignaturaButtonClick(ActionEvent event) throws IOException {
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("resources/com/example/mttp2024/opciones 1.fxml"));
+        Scene scene=new Scene(loader.load());
+        Opciones1Controller opciones1=loader.getController();
+        Scene scene1=new Scene(loader.load());
+        Stage stage1=new Stage();
+        stage1.setScene(scene1);
+        stage1.show();
+
 
     }
 
@@ -90,7 +104,7 @@ public class MenuController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        //TODO
     }
 }
 

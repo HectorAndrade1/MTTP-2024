@@ -36,6 +36,6 @@ public class Opciones1Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        //TODO
     }
 }
