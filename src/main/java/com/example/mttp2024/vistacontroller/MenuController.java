@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MenuController{
+public class MenuController implements Initializable{
 
     @FXML
     private Button botonasignaturas;
@@ -98,6 +98,11 @@ public class MenuController{
     @FXML
     void tabTareasSelected(Event event) {
 
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        
     }
 }
 
