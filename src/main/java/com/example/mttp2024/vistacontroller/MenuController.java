@@ -43,16 +43,9 @@ public class MenuController implements Initializable{
     @FXML
     private Tab tabTareas;
 
-    Stage opcionesStage=new Stage();
     @FXML
-    void btnAsignaturaButtonClick(ActionEvent event){
-        try {
-            FXMLLoader loader=new FXMLLoader(getClass().getResource("com/example/mttp2024/opciones 1.fxml"));
-            opcionesStage.setScene(loader.load());
-            opcionesStage.showAndWait();
-        }catch (IOException e){
-            e.printStackTrace(System.out);
-        }
+    void btnAsignaturaButtonClick(ActionEvent event) {
+
     }
 
     @FXML
