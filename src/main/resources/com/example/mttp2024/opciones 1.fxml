@@ -14,6 +14,13 @@
             <Button fx:id="botonModificar" layoutX="17.0" layoutY="60.0" mnemonicParsing="false" onAction="#btnModificarButtonClick" prefHeight="30.0" prefWidth="227.0" text="MODIFICAR" />
             <Button fx:id="botonEliminar" layoutX="17.0" layoutY="106.0" mnemonicParsing="false" onAction="#btnEliminarButtonClick" prefHeight="30.0" prefWidth="227.0" text="ELIMINAR" />
          </children>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="0.3279285728931427" blue="0.029999999329447746" />
+               </color>
+            </DropShadow>
+         </effect>
       </Pane>
    </children>
    <effect>

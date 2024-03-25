@@ -24,16 +24,16 @@
             <Label layoutX="14.0" layoutY="154.0" text="HORA INICIO DE CLASE: " />
             <Label layoutX="14.0" layoutY="192.0" text="HORA FIN DE CLASE: " />
             <Label layoutX="306.0" layoutY="155.0" text="HRS:MIN" />
-            <Button alignment="BOTTOM_RIGHT" layoutX="144.0" layoutY="236.0" mnemonicParsing="false" onAction="#btnGuardarClaseButtonClick" prefHeight="30.0" prefWidth="93.0" text="GUARDAR">
+            <Button fx:id="botonGuardarClase" alignment="BOTTOM_RIGHT" layoutX="144.0" layoutY="236.0" mnemonicParsing="false" onAction="#btnGuardarClaseButtonClick" prefHeight="30.0" prefWidth="93.0" text="GUARDAR">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <TextField layoutX="147.0" layoutY="57.0" onAction="#textoAgregarClaseNombre" prefHeight="26.0" prefWidth="213.0" />
-            <TextField layoutX="147.0" layoutY="103.0" onAction="#textoAgregarClaseDiaSemana" prefHeight="26.0" prefWidth="213.0" />
+            <TextField fx:id="nombreClase" layoutX="147.0" layoutY="57.0" onAction="#textoAgregarClaseNombre" prefHeight="26.0" prefWidth="213.0" />
+            <TextField fx:id="diaSemana" layoutX="147.0" layoutY="103.0" onAction="#textoAgregarClaseDiaSemana" prefHeight="26.0" prefWidth="213.0" />
             <Label layoutX="306.0" layoutY="192.0" text="HRS:MIN" />
-            <TextField layoutX="166.0" layoutY="151.0" onAction="#textoAgregarClaseHoraInicio" prefHeight="26.0" prefWidth="133.0" />
-            <TextField layoutX="166.0" layoutY="188.0" onAction="#textoAgregarClaseHoraFin" prefHeight="26.0" prefWidth="133.0" />
-            <Label accessibleRole="MENU_BUTTON" layoutX="152.0" layoutY="19.0" prefHeight="18.0" prefWidth="213.0" textAlignment="CENTER" />
+            <TextField fx:id="horaInicio" layoutX="166.0" layoutY="151.0" onAction="#textoAgregarClaseHoraInicio" prefHeight="26.0" prefWidth="133.0" />
+            <TextField fx:id="horaFin" layoutX="166.0" layoutY="188.0" onAction="#textoAgregarClaseHoraFin" prefHeight="26.0" prefWidth="133.0" />
+            <Label fx:id="mostrarselecction" accessibleRole="MENU_BUTTON" layoutX="152.0" layoutY="19.0" prefHeight="18.0" prefWidth="213.0" textAlignment="CENTER" />
          </children>
       </Pane>
    </children>

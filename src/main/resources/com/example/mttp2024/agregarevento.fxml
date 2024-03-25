@@ -17,12 +17,12 @@
             <Label layoutX="20.0" layoutY="110.0" prefHeight="18.0" prefWidth="134.0" text="FECHA DEL EVENTO: " />
             <Label layoutX="20.0" layoutY="140.0" text="HORA DE INICIO: " />
             <Label layoutX="20.0" layoutY="170.0" text="HORA FIN DEL EVENTO: " />
-            <TextField layoutX="191.0" layoutY="17.0" prefHeight="26.0" prefWidth="244.0" />
-            <TextField layoutX="191.0" layoutY="47.0" prefHeight="26.0" prefWidth="244.0" />
-            <TextField layoutX="191.0" layoutY="77.0" prefHeight="26.0" prefWidth="244.0" />
-            <TextField layoutX="191.0" layoutY="107.0" prefHeight="26.0" prefWidth="244.0" />
-            <TextField layoutX="191.0" layoutY="137.0" prefHeight="26.0" prefWidth="244.0" />
-            <TextField layoutX="191.0" layoutY="167.0" prefHeight="26.0" prefWidth="244.0" />
+            <TextField fx:id="nombreEvento" layoutX="191.0" layoutY="17.0" prefHeight="26.0" prefWidth="244.0" />
+            <TextField fx:id="descripcionEvento" layoutX="191.0" layoutY="47.0" prefHeight="26.0" prefWidth="244.0" />
+            <TextField fx:id="ubicacionEvento" layoutX="191.0" layoutY="77.0" prefHeight="26.0" prefWidth="244.0" />
+            <TextField fx:id="fechaEvento" layoutX="191.0" layoutY="107.0" prefHeight="26.0" prefWidth="244.0" />
+            <TextField fx:id="horaInicio" layoutX="191.0" layoutY="137.0" prefHeight="26.0" prefWidth="244.0" />
+            <TextField fx:id="horaFin" layoutX="191.0" layoutY="167.0" prefHeight="26.0" prefWidth="244.0" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="184.0" layoutY="220.0" mnemonicParsing="false" onAction="#btnGuardarEventoButtonClick" text="GUARDAR">
                <cursor>
                   <Cursor fx:constant="HAND" />
