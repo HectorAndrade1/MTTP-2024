@@ -8,7 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -44,17 +43,13 @@ public class MenuController implements Initializable{
     @FXML
     private Tab tabTareas;
 
+    Stage opcionesStage=new Stage();
     @FXML
     void btnAsignaturaButtonClick(ActionEvent event){
         try {
-            FXMLLoader loader=new FXMLLoader();
-            loader.setLocation(getClass().getResource("opciones 1.fxml"));
-            Opciones1Controller opciones1Controller=loader.getController();
-            Scene scene=new Scene(loader.load());
-            Stage stage=new Stage();
-            stage.setScene(scene);
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.showAndWait();
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("com/example/mttp2024/opciones 1.fxml"));
+            opcionesStage.setScene(loader.load());
+            opcionesStage.showAndWait();
         }catch (IOException e){
             e.printStackTrace(System.out);
         }
@@ -102,7 +97,7 @@ public class MenuController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        
+
     }
 }
 
