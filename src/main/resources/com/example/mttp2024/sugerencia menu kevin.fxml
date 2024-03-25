@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.SplitPane?>
@@ -13,11 +14,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mttp2024.vistacontroller.MenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="854.0"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mttp2024.vistacontroller.MenuController">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="854.0">
          <children>
-            <SplitPane dividerPositions="0.1960093896713615" prefHeight="480.0" prefWidth="854.0">
+            <SplitPane dividerPositions="0.19483568075117372" prefHeight="480.0" prefWidth="854.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="167.0" SplitPane.resizableWithParent="false">
                      <children>
@@ -38,8 +39,11 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button layoutX="12.0" layoutY="306.0" mnemonicParsing="false" onAction="#btnAsignaturaButtonClick" prefHeight="30.0" prefWidth="141.0" text="ASIGNATURA" />
-                        <ImageView fitHeight="221.0" fitWidth="141.0" layoutX="10.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <Button layoutX="12.0" layoutY="306.0" mnemonicParsing="false" onAction="#btnAsignaturaButtonClick" prefHeight="30.0" prefWidth="141.0" text="ASIGNATURA">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <ImageView fitHeight="266.0" fitWidth="141.0" layoutX="10.0" layoutY="14.0" pickOnBounds="true">
                            <image>
                               <Image url="@../../../../java/com/example/mttp2024/imagenes/pngwing.com.png" />
                            </image>
