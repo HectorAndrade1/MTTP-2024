@@ -7,6 +7,7 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AgregarAsignaturaController">
    <children>
@@ -16,7 +17,14 @@
             <Button fx:id="botonguardarasignatura" layoutX="511.0" layoutY="96.0" mnemonicParsing="false" onAction="#btnGuardarAsignaturaClick" text="GUARDAR">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.019607843831181526" green="0.5098039507865906" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect></Button>
             <TextField fx:id="nombreasignatura" layoutX="213.0" layoutY="31.0" onAction="#textoAgregarAsignaturaNombre" prefHeight="26.0" prefWidth="341.0" />
          </children>
       </Pane>

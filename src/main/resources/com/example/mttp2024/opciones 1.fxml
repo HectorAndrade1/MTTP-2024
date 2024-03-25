@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Opciones1Controller">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/19.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mttp2024.vistacontroller.Opciones1Controller">
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="260.0">
          <children>
@@ -17,7 +17,7 @@
          <effect>
             <DropShadow>
                <color>
-                  <Color red="1.0" green="0.3279285728931427" blue="0.029999999329447746" />
+                  <Color red="0.019607843831181526" green="0.5098039507865906" blue="1.0" />
                </color>
             </DropShadow>
          </effect>

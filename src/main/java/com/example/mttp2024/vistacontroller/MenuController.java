@@ -3,10 +3,19 @@ package com.example.mttp2024.vistacontroller;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
-public class MenuController {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MenuController{
 
     @FXML
     private Button botonasignaturas;
@@ -36,8 +45,19 @@ public class MenuController {
     private Tab tabTareas;
 
     @FXML
-    void btnAsignaturaButtonClick(ActionEvent event) {
-
+    void btnAsignaturaButtonClick(ActionEvent event){
+        try {
+            FXMLLoader loader=new FXMLLoader();
+            loader.setLocation(getClass().getResource("opciones 1.fxml"));
+            Opciones1Controller opciones1Controller=loader.getController();
+            Scene scene=new Scene(loader.load());
+            Stage stage=new Stage();
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        }catch (IOException e){
+            e.printStackTrace(System.out);
+        }
     }
 
     @FXML
@@ -79,6 +99,5 @@ public class MenuController {
     void tabTareasSelected(Event event) {
 
     }
-
 }
 
