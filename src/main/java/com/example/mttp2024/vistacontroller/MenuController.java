@@ -51,6 +51,8 @@ public class MenuController {
         FXMLLoader loader=new FXMLLoader(getClass().getResource("com/example/mttp2024/opciones 1.fxml"));
         Scene scene = new Scene(loader.load(),854,480);
         stage.setTitle("Organizador de Tareas");
+        Opciones1Controller opcioncontrol=loader.getController();
+        opcioncontrol.init(1,stage,this);
         stage.setScene(scene);
         stage.show();
     }
