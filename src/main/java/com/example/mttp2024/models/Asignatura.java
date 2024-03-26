@@ -3,20 +3,19 @@ package com.example.mttp2024.models;
 import java.util.ArrayList;
 
 public class Asignatura {
+
+    private int idAsignatura;
     private String nombreAsigatura;
-    private ArrayList<Tarea> listaTareas;
-    private ArrayList<Clase> listaClases;
 
-    public Asignatura(String nombreAsigatura, ArrayList<Tarea> listaTareas, ArrayList<Clase> listaClases){
 
+    public Asignatura(int idAsignatura,String nombreAsigatura){
+        this.idAsignatura=idAsignatura;
         this.nombreAsigatura=nombreAsigatura;
-        this.listaTareas=listaTareas;
-        this.listaClases=listaClases;
+
     }
     public  Asignatura(String nombreAsigatura){
         this.nombreAsigatura=nombreAsigatura;
-        listaTareas=null;
-        listaClases=null;
+
     }
     public void setNombreAsigatura(String nombreAsigatura) {
         this.nombreAsigatura = nombreAsigatura;
@@ -26,19 +25,7 @@ public class Asignatura {
         return nombreAsigatura;
     }
 
-    public ArrayList<Clase> getListaClases() {
-        return listaClases;
+    public int getIdAsignatura() {
+        return idAsignatura;
     }
-    public void setListaClases(ArrayList<Clase> listaClases) {
-        this.listaClases = listaClases;
-    }
-
-    public void setListaTareas(ArrayList<Tarea> listaTareas) {
-        this.listaTareas = listaTareas;
-    }
-
-    public ArrayList<Tarea> getListaTareas() {
-        return listaTareas;
-    }
-
 }
