@@ -4,30 +4,51 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tab;
-import javafx.scene.image.Image;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
-import javax.xml.stream.Location;
 import java.io.IOException;
-
 
 public class MenuController {
 
     @FXML
-    private Button botonasignaturas;
+    private MenuItem agregarasignatura;
 
     @FXML
-    private Button botonclase;
+    private MenuItem agregarclase;
 
     @FXML
-    private Button botonevento;
+    private MenuItem agregarevento;
 
     @FXML
-    private Button botontareas;
+    private MenuItem agregartarea;
+
+    @FXML
+    private MenuItem eliminarasignatura;
+
+    @FXML
+    private MenuItem eliminarclase;
+
+    @FXML
+    private MenuItem eliminarevento;
+
+    @FXML
+    private MenuItem eliminartarea;
+
+    @FXML
+    private MenuItem modificarAsignatura;
+
+    @FXML
+    private MenuItem modificarclase;
+
+    @FXML
+    private MenuItem modificarevento;
+
+    @FXML
+    private MenuItem modificartarea;
 
     @FXML
     private Tab tabAsignaturas;
@@ -44,31 +65,72 @@ public class MenuController {
     @FXML
     private Tab tabTareas;
 
-    private Stage stage=new Stage();
+    @FXML
+    private TableView<?> tablahorario;
 
     @FXML
-    void btnAsignaturaButtonClick(ActionEvent event) throws IOException {
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("com/example/mttp2024/opciones 1.fxml"));
-        Scene scene = new Scene(loader.load(),854,480);
-        stage.setTitle("Organizador de Tareas");
-        Opciones1Controller opcioncontrol=loader.getController();
-        opcioncontrol.init(1,stage,this);
+    void btnAgregarAsignaturaClick(ActionEvent event) throws IOException {
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("agregar asignatura.fxml"));
+        Scene scene=new Scene(loader.load());
+        Stage stage=new Stage();
         stage.setScene(scene);
         stage.show();
-    }
 
-    @FXML
-    void btnClaseButtonClick(ActionEvent event) {
 
     }
 
     @FXML
-    void btnEventoButtonCLick(ActionEvent event) {
+    void btnAgregarClaseClick(ActionEvent event) {
 
     }
 
     @FXML
-    void btnTareaButtonClick(ActionEvent event) {
+    void btnAgregarEventoClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnAgregarTareaClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnEliminarAsignaturaClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnEliminarClaseClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnEliminarEventoClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnEliminarTareaClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnModificarAsignaturaClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnModificarClaseClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnModificarEventoClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnModificarTareaClick(ActionEvent event) {
 
     }
 
@@ -96,5 +158,6 @@ public class MenuController {
     void tabTareasSelected(Event event) {
 
     }
+
 }
 

@@ -1,4 +1,4 @@
-module com.example.mttp2024 {
+module com.example.mttp {
     requires javafx.base;
     requires javafx.graphics;
     requires javafx.controls;

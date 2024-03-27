@@ -1,11 +1,10 @@
 package com.example.mttp2024;
 
-import com.example.mttp2024.vistacontroller.MenuController;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,7 +16,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(),854,480);
         Image imagen=new Image("imagenes/logo_chiquito-removebg-preview.png");
         stage.getIcons().add(imagen);
-        stage.setTitle("Organizador de Tareas");
+            stage.setTitle("ORGANIZADOR DE TAREAS");
         stage.setScene(scene);
         stage.show();
     }
