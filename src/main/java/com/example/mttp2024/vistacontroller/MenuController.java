@@ -70,11 +70,11 @@ public class MenuController {
 
     @FXML
     void btnAgregarAsignaturaClick(ActionEvent event) throws IOException {
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("agregar asignatura.fxml"));
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("agregarasignatura.fxml"));
         Scene scene=new Scene(loader.load());
         Stage stage=new Stage();
         stage.setScene(scene);
-        stage.show();
+        stage.showAndWait();
 
 
     }

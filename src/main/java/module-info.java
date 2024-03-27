@@ -1,4 +1,4 @@
-module com.example.mttp {
+module com.example.mttp2024 {
     requires javafx.base;
     requires javafx.graphics;
     requires javafx.controls;
@@ -9,4 +9,5 @@ module com.example.mttp {
 
     opens com.example.mttp2024.vistacontroller to javafx.fxml;
     exports com.example.mttp2024;
+    exports com.example.mttp2024.vistacontroller to javafx.graphics;
 }

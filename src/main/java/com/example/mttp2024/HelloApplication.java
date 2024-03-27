@@ -16,7 +16,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(),854,480);
         Image imagen=new Image("imagenes/logo_chiquito-removebg-preview.png");
         stage.getIcons().add(imagen);
-            stage.setTitle("ORGANIZADOR DE TAREAS");
+        stage.setTitle("ORGANIZADOR DE TAREAS");
         stage.setScene(scene);
         stage.show();
     }

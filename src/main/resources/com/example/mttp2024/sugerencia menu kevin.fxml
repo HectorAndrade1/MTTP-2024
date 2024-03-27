@@ -58,7 +58,7 @@
                     <MenuItem fx:id="eliminarclase" mnemonicParsing="false" onAction="#btnEliminarClaseClick" text="ELIMINAR" />
                 </items>
             </MenuButton>
-            <MenuButton alignment="CENTER" contentDisplay="RIGHT" layoutX="14.0" layoutY="395.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="141.0" text="TAREA" textFill="#0582ff">
+            <MenuButton alignment="CENTER" contentDisplay="RIGHT" layoutX="14.0" layoutY="397.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="141.0" text="TAREA" textFill="#0582ff">
                 <cursor>
                     <Cursor fx:constant="HAND" />
                 </cursor>
@@ -75,7 +75,7 @@
                     <MenuItem fx:id="eliminartarea" mnemonicParsing="false" onAction="#btnEliminarTareaClick" text="ELIMINAR" />
                 </items>
             </MenuButton>
-            <MenuButton alignment="CENTER" contentDisplay="RIGHT" layoutX="14.0" layoutY="436.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="141.0" text="EVENTO" textFill="#0582ff">
+            <MenuButton alignment="CENTER" contentDisplay="RIGHT" layoutX="14.0" layoutY="440.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="141.0" text="EVENTO" textFill="#0582ff">
                 <cursor>
                     <Cursor fx:constant="HAND" />
                 </cursor>
