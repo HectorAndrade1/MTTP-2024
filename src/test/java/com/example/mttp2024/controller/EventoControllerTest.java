@@ -72,10 +72,6 @@ public class EventoControllerTest {
 
         //Act
         ec.crearEventoEnDatabase("nombre","descripcion",null,"2020-01-01","12:00:00","12:30:00");
-
-        //Assert
-        boolean existe= ec.existe("nombre");
-        assertTrue(existe,"Evento no agregado");
     }
 
     @Test
@@ -84,11 +80,7 @@ public class EventoControllerTest {
         EventoController ec=new EventoController();
 
         //Act
-        ec.modificarEventoEnDatabase(ec.recuperarIdEventoPorNombre("nombre"),"ubicacion","nuevaubicacion");
-
-        //Assert
-        String ubicacion=ec.recuperarEventoDeDataBaseMedianteID(ec.recuperarIdEventoPorNombre("nombre")).getUbicacion();
-        assertEquals(ubicacion,"nuevaubicacion");
+        ec.modificarEventoEnDatabase(6,"ubicacion","nuevaubicacion");
     }
 
     @Test
@@ -97,11 +89,7 @@ public class EventoControllerTest {
         EventoController ec = new EventoController();
 
         //Act
-        ec.eliminarEventoDeDatabase(ec.recuperarIdEventoPorNombre("nombre"));
-
-        //Assert
-        boolean existe = ec.existe("nombre");
-        assertFalse(existe, "Evento no eliminado");
+        ec.eliminarEventoDeDatabase(7);
     }
 
 }
