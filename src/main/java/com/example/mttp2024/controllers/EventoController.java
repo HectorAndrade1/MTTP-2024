@@ -27,8 +27,8 @@ public class EventoController {
                 try (Connection conection=dataBase.connection()) {
                     String query = String.format("INSERT INTO evento (nombre_evento,descripcion_evento,fecha_evento,hora_inicio_evento,hora_fin_evento,ubicacion)VALUES ('%s','%s','%s','%s','%s','%s')",nombreEvento , descripcionEvento , fecha , horaInicio , horaFin , ubicacion );
                     PreparedStatement statement = conection.prepareStatement(query);
-                    ResultSet resultado=statement.executeQuery();
-                    if(resultado.next()){
+                    int resultado=statement.executeUpdate();
+                    if(resultado>0){
                         System.out.println("Evento agreagado con exito");
                     }
                     else {
@@ -45,8 +45,8 @@ public class EventoController {
         try (Connection conection=dataBase.connection()){
             String query=String.format("UPDATE evento SET %s='%s' WHERE id_evento=%d",atributo,nuevovalor,id);
             PreparedStatement statement=conection.prepareStatement(query);
-            ResultSet resultado=statement.executeQuery();
-            if(resultado.next()){
+            int resultado=statement.executeUpdate();
+            if(resultado>0){
                 System.out.println("Atributo modificado");
             }else {
                 System.out.println("No se pudo modificar atributo");
@@ -58,10 +58,10 @@ public class EventoController {
 
     public void eliminarEventoDeDatabase(int id) throws SQLException{
         try (Connection conection=dataBase.connection()){
-            String query= String.format("DELETE * From evento WHERE id_evento= %d",id);
+            String query= String.format("DELETE From evento WHERE id_evento= %d",id);
             PreparedStatement statement=conection.prepareStatement(query);
-            ResultSet resultado=statement.executeQuery();
-            if (resultado.next()){
+            int resultant=statement.executeUpdate();
+            if (resultant>0){
                 System.out.println("Evento eliminado");
             }else {
                 System.out.println("No se pudo eliminar el Evento");

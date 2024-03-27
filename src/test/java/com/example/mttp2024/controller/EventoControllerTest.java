@@ -65,33 +65,33 @@ public class EventoControllerTest {
         assertNotNull(eventos,"Lista vacia");
     }
 
-    /*@Test
+    @Test
     void crearEvento_DeberiaAgreagarEventosADatabase() throws SQLException{
         //Arrange
         EventoController ec=new EventoController();
 
         //Act
-        ec.crearEventoEnDatabase("nombre","descripcion",null,"2020-01-01","12:00","12:30");
+        ec.crearEventoEnDatabase("nombre","descripcion",null,"2020-01-01","12:00:00","12:30:00");
 
         //Assert
         boolean existe= ec.existe("nombre");
         assertTrue(existe,"Evento no agregado");
-    }*/
+    }
 
-    /*@Test
+    @Test
     void modificarEventoEnDatabase_DeberiaModificarAtributos() throws SQLException{
         //Arrange
         EventoController ec=new EventoController();
 
         //Act
-        ec.modificarEventoEnDatabase(5,"ubicacion","nuevaubicacion");
+        ec.modificarEventoEnDatabase(ec.recuperarIdEventoPorNombre("nombre"),"ubicacion","nuevaubicacion");
 
         //Assert
-        String ubicacion=ec.recuperarEventoDeDataBaseMedianteID(5).getUbicacion();
+        String ubicacion=ec.recuperarEventoDeDataBaseMedianteID(ec.recuperarIdEventoPorNombre("nombre")).getUbicacion();
         assertEquals(ubicacion,"nuevaubicacion");
-    }*/
+    }
 
-    /*@Test
+    @Test
     void eliminarEvento_DeberiaEliminarEventosDeDatabase() throws SQLException {
         //Arrange
         EventoController ec = new EventoController();
@@ -101,7 +101,7 @@ public class EventoControllerTest {
 
         //Assert
         boolean existe = ec.existe("nombre");
-        assertFalse(existe, "Evento no agregado");
-    }*/
+        assertFalse(existe, "Evento no eliminado");
+    }
 
 }
