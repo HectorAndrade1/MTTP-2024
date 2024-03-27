@@ -151,4 +151,11 @@ public class EventoController {
         return listaEventos;
     }
 
+    public void mostrarEventos() throws SQLException {
+        ArrayList<Evento> listaevento=new ArrayList<>(listarEventos());
+        for(Evento l:listaevento){
+            System.out.println("ID: "+l.getIdEvento()+"Nombre: "+l.getNombreEvento()+"\tDescripcion: "+l.getDescripcionEvento()+"Ubicacion: "+l.getUbicacion()+"Fecha: "+l.getFechaEvento()+"Hora inicio: "+l.getHoraInicioEvento()+"Hora fin: "+l.getHoraFinEvento());
+        }
+    }
+
 }

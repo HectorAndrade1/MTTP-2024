@@ -66,6 +66,15 @@ public class EventoControllerTest {
     }
 
     @Test
+    void mostrarEventoPrueba() throws SQLException{
+        //Arrange
+        EventoController ec=new EventoController();
+
+        //Act
+        ec.mostrarEventos();
+    }
+
+    @Test
     void crearEvento_DeberiaAgreagarEventosADatabase() throws SQLException{
         //Arrange
         EventoController ec=new EventoController();
