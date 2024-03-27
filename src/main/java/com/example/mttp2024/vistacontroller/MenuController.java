@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tab;
@@ -11,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class MenuController {
 
@@ -70,11 +72,18 @@ public class MenuController {
 
     @FXML
     void btnAgregarAsignaturaClick(ActionEvent event) throws IOException {
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("agregarasignatura.fxml"));
-        Scene scene=new Scene(loader.load());
-        Stage stage=new Stage();
-        stage.setScene(scene);
-        stage.showAndWait();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("agregarasignatura.fxml"));
+            URL fxmlUrl = getClass().getResource("com/example/mttp2024/agregarasignatura.fxml");
+            System.out.println("Ruta del recurso cargado: " + fxmlUrl);
+            Parent root=loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace(System.out);
+        }
 
 
     }

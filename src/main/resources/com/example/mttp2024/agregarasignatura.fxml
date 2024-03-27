@@ -9,29 +9,24 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0"
-      prefWidth="600.0" xmlns="http://javafx.com/javafx/19.0.2" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.mttp2024.vistacontroller.AgregarAsignaturaController">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="600.0" type="VBox" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mttp2024.vistacontroller.AgregarAsignaturaController">
    <effect>
-      <DropShadow height="40.0" radius="19.5" width="40.0"/>
+      <DropShadow height="40.0" radius="19.5" width="40.0" />
    </effect>
-   <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0"
-         prefWidth="600.0">
-      <Label layoutX="34.0" layoutY="35.0" prefHeight="18.0" prefWidth="171.0" text="NOMBRE DE ASIGNATURA:"/>
-      <Button fx:id="botonguardarasignatura" layoutX="511.0" layoutY="96.0" mnemonicParsing="false"
-              onAction="#btnGuardarAsignaturaClick" text="GUARDAR">
+   <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="600.0">
+      <Label layoutX="34.0" layoutY="35.0" prefHeight="18.0" prefWidth="171.0" text="NOMBRE DE ASIGNATURA:" />
+      <Button fx:id="botonguardarasignatura" layoutX="511.0" layoutY="96.0" mnemonicParsing="false" onAction="#btnGuardarAsignaturaClick" text="GUARDAR">
          <cursor>
-            <Cursor fx:constant="HAND"/>
+            <Cursor fx:constant="HAND" />
          </cursor>
          <effect>
             <DropShadow>
                <color>
-                  <Color red="0.019607843831181526" green="0.5098039507865906" blue="1.0"/>
+                  <Color red="0.019607843831181526" green="0.5098039507865906" blue="1.0" />
                </color>
             </DropShadow>
          </effect>
       </Button>
-      <TextField fx:id="nombreasignatura" layoutX="213.0" layoutY="31.0" onAction="#textoAgregarAsignaturaNombre"
-                 prefHeight="26.0" prefWidth="341.0"/>
+      <TextField fx:id="nombreasignatura" layoutX="213.0" layoutY="31.0" onAction="#textoAgregarAsignaturaNombre" prefHeight="26.0" prefWidth="341.0" />
    </Pane>
-</VBox>
+</fx:root>
